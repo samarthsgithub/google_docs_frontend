@@ -1,0 +1,80 @@
+.document-collection-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid black; */
+    height: 50vh; /* Full viewport height */
+    /* border:1px solid black; */
+    background-color: rgb(242,243,244);
+  }
+  
+  /* Center the content inside the document-collection div */
+  .document-collection {
+    text-align: center;
+    /* border:1px solid black; */
+  }
+  
+  /* Additional styling for blank-sheet and plus-icon */
+  .blank-sheet {
+    margin: 20px 0;
+    width:15vw;
+    height:calc(11vw*1.411);
+    margin-left:5rem;
+    max-width:21cm;
+    max-height:21cm;
+    border:1px solid grey;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:3px;
+  }
+  
+  .plus-icon {
+    width: 11rem; /* Adjust the size as needed */
+    height: 11.4rem; /* Adjust the size as needed */
+  }
+  .blank-sheet:hover{
+    border:1px solid blue;
+  }
+  .my-documents-heading{
+    /* border:1px solid black; */
+    width:15rem;
+    margin-left:16rem;
+  }
+  .document-list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:120px;
+    margin-top:20px;
+    width:100%;
+  }
+
+  .document-item{
+    width:23%;
+    max-width:150px;
+    display:flex;
+    justify-content: center;
+    margin-bottom:20px;
+  }
+  .document-thumbnail {
+    width: 150px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed */
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .document-thumbnail:hover{
+    border:1px solid blue;
+  }
+  
+  .document-thumbnail img {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+  }
+  
+  .document-thumbnail p {
+    margin-top: 10px;
+  }
