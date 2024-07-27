@@ -4,6 +4,7 @@ import axios from 'axios';
 import ReactQuill from 'react-quill';
 import { useParams } from 'react-router-dom';
 import 'react-quill/dist/quill.snow.css';
+import './DocumentEditor.css';
 
 function DocumentEditor() {
     const { id } = useParams();
@@ -102,33 +103,34 @@ function DocumentEditor() {
     };
 
     return (
-        <>
-            <div>
-                <h1>Edit Document</h1>
-                <h2>Title</h2>
+        <div className="document-editor">
+            <div className="editor-header">
                 <input
                     type="text"
                     value={title}
                     onChange={handleTitleChange}
                     placeholder='Document Title'
-                    style={{ width: '50%', padding: '10px', fontSize: '1.5em', marginBottom: '20px' }}
+                    className="title-input"
                 />
-                <ReactQuill
-                    theme="snow"
-                    value={content}
-                    onChange={handleContentChange}
-                    ref={quillRef}
-                />
-                <button onClick={() => generateLink('view')}>Generate View Link</button>
-                <button onClick={() => generateLink('edit')}>Generate Edit Link</button>
-                {link && (
-                    <div>
-                        <p>Shareable Link: <a href={link}>{link}</a></p>
-                    </div>
-                )}
+                <div className="header-buttons">
+                    <button onClick={() => generateLink('view')} className="header-button">Generate View Link</button>
+                    <button onClick={() => generateLink('edit')} className="header-button">Generate Edit Link</button>
+                </div>
             </div>
-            <button onClick={saveDocument}>Save</button>
-        </>
+            <ReactQuill
+                theme="snow"
+                value={content}
+                onChange={handleContentChange}
+                ref={quillRef}
+                className="quill-editor"
+            />
+            {link && (
+                <div className="link-container">
+                    <p>Shareable Link: <a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
+                </div>
+            )}
+            <button onClick={saveDocument} className="save-button">Save</button>
+        </div>
     );
 }
 

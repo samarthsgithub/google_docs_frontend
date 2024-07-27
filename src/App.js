@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/documents/:id/:access_type/:token" element={<ShareableDocumentEditor/>}/>
           <Route path ="/documents/:id" element={<DocumentEditor/>}/>
  
